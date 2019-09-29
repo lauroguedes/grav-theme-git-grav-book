@@ -1,0 +1,12 @@
+// Custom Variables and Componentes Variables
+@import 'theme/import';
+
+//Variables and Mixins UiKit
+@import '../node_modules/uikit/src/scss/variables.scss';
+@import '../node_modules/uikit/src/scss/mixins.scss';
+
+//Custom mixins overwrites
+//**
+
+//UiKit
+@import '../node_modules/uikit/src/scss/uikit.scss';
