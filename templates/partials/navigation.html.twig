@@ -12,7 +12,7 @@
                 </ul>
             </li>
         {% else %}
-            <li class="{{ current_page }}">
+            <li class="uk-parent {{ current_page }}">
                 <a href="{{ p.url }}">
                     {% if p.header.icon %}<i class="fa fa-{{ p.header.icon }}"></i>{% endif %}
                     {{ p.menu }}
@@ -22,13 +22,14 @@
     {% endfor %}
 {% endmacro %}
 
-<ul>
+<ul class="uk-nav-default uk-nav-parent-icon" uk-nav="multiple: true">
+    <li class="uk-active"><a href="#">Active</a></li>
     {% if theme_config.dropdown.enabled %}
         {{ _self.loop(pages) }}
     {% else %}
         {% for page in pages.children.visible %}
             {% set current_page = (page.active or page.activeChild) ? 'selected' : '' %}
-            <li class="{{ current_page }}">
+            <li class="uk-parent {{ current_page }}">
                 <a href="{{ page.url }}">
                     {% if page.header.icon %}<i class="fa fa-{{ page.header.icon }}"></i>{% endif %}
                     {{ page.menu }}
